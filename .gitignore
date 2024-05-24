@@ -1,0 +1,5 @@
+__pycahe__/
+*.py[cod]
+
+src/media
+
