@@ -32,7 +32,6 @@ async def upload_file(file: UploadFile, user=Depends(current_user),
             file.file.close()
         return JSONResponse(content={'status': 'success'}, status_code=201)
     except Exception as e:
-        print(e)
         raise HTTPException(status_code=500, detail={
             "status": "error",
             "data": None,
@@ -51,7 +50,6 @@ async def get_files_of_users(user=Depends(current_user), session: AsyncSession =
                             range(len(result))]}
         return JSONResponse(content=content, status_code=200)
     except Exception as e:
-        print(e)
         raise HTTPException(status_code=500, detail={
             "status": "error",
             "data": None,

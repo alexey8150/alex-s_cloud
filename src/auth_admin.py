@@ -42,7 +42,5 @@ class AdminAuth(AuthenticationBackend):
         if not token:
             return RedirectResponse(request.url_for("admin:login"), status_code=302)
 
-        # Check the token in depth
-
 
 authentication_backend = AdminAuth(secret_key=SECRET_AUTH)
