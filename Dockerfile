@@ -6,6 +6,8 @@ WORKDIR /app
 
 COPY Pipfile Pipfile.lock /app/
 
+ENV PORT 8080
+
 RUN pipenv install --system --deploy
 
 COPY . /app
